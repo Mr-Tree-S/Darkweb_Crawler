@@ -1,0 +1,9 @@
+2023-09-13 14:44:39,541 INFO |docx|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Katei Wai.docx|17.92kB|2022-11-21 06:41:23
+2023-09-13 14:44:39,541 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Cyrus Lung.pdf|169.05kB|2022-11-14 06:30:49
+2023-09-13 14:44:39,541 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Joanne Ma.pdf|188.22kB|2022-11-21 06:38:57
+2023-09-13 14:44:39,541 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/June Liu.pdf|183.97kB|2022-11-15 09:59:52
+2023-09-13 14:44:39,541 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Kaur Simranpal.pdf|181.95kB|2022-11-14 06:38:32
+2023-09-13 14:44:39,542 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Olivia Yim.pdf|122.47kB|2022-11-14 06:28:44
+2023-09-13 14:44:39,542 INFO |doc|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Joven Yip.doc|122.50kB|2022-11-21 06:40:42
+2023-09-13 14:44:39,542 INFO |doc|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/TUNG Ho Chung.doc|74.50kB|2022-11-14 06:41:05
+2023-09-13 14:44:39,542 INFO |pdf|HR/2.   Recruitment/Resume/2022/_Completed/Admin Executive - Office Admin/5th batch/Clean/Hoi Sze Wong.pdf|199.41kB|2022-11-15 09:59:27

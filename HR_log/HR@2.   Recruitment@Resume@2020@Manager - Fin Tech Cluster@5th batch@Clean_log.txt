@@ -1,0 +1,2 @@
+2023-09-13 14:44:36,897 INFO |doc|HR/2.   Recruitment/Resume/2020/Manager - Fin Tech Cluster/5th batch/Clean/ALFRED LEE- RESUME (1).doc|75.00kB|2020-10-05 06:51:04
+2023-09-13 14:44:36,897 INFO |doc|HR/2.   Recruitment/Resume/2020/Manager - Fin Tech Cluster/5th batch/Clean/CV_Robson Chiu (1).doc|61.50kB|2020-10-05 06:52:03

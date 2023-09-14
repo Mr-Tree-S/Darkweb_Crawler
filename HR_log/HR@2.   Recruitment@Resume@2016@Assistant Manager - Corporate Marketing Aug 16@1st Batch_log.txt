@@ -1,0 +1,31 @@
+2023-09-13 14:44:43,603 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Maggie.doc|139.50kB|2016-08-26 10:19:12
+2023-09-13 14:44:43,603 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/NG Chi Chung, Alan_1.doc|67.00kB|2016-08-26 02:40:19
+2023-09-13 14:44:43,603 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Stephanie Choi.doc|139.50kB|2016-08-29 03:58:17
+2023-09-13 14:44:43,603 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Alan Ng.doc|139.50kB|2016-08-29 04:22:39
+2023-09-13 14:44:43,603 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Stephanie Choi.doc|140.00kB|2016-08-29 03:53:31
+2023-09-13 14:44:43,604 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Stefanie.doc|139.50kB|2016-09-01 04:02:50
+2023-09-13 14:44:43,604 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Sharon Luk.doc|140.00kB|2016-08-30 01:42:45
+2023-09-13 14:44:43,604 INFO |docx|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/Maggie CHIK_1.docx|78.86kB|2016-08-26 02:42:15
+2023-09-13 14:44:43,604 INFO |docx|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/YEUNG Chit Yung, Jackie_1.docx|22.80kB|2016-08-26 03:11:04
+2023-09-13 14:44:43,604 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Stefanie Lam.doc|140.00kB|2016-09-01 04:02:11
+2023-09-13 14:44:43,604 INFO |docx|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/LUK Shiu Yan, Sharon_1.docx|28.02kB|2016-08-26 03:12:42
+2023-09-13 14:44:43,604 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/LAM Hoi Yee, Jessica_1.doc|85.50kB|2016-08-26 03:16:48
+2023-09-13 14:44:43,604 INFO |pdf|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/CHOI Suet Yung, Stephanie_1.pdf|147.70kB|2016-08-26 03:20:58
+2023-09-13 14:44:43,604 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Sharon Luk.doc|139.50kB|2016-08-30 01:42:42
+2023-09-13 14:44:43,605 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Jackie.doc|140.00kB|2016-08-29 04:03:30
+2023-09-13 14:44:43,605 INFO |pdf|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/CHOW Ka Yin, Florence_1.pdf|482.33kB|2016-08-26 02:37:09
+2023-09-13 14:44:43,605 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Alan Ng.doc|140.00kB|2016-08-29 03:51:27
+2023-09-13 14:44:43,605 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Stefanie Lam.doc|139.00kB|2016-09-01 04:03:51
+2023-09-13 14:44:43,605 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/LAM Ho Yan, Stefanie_1.doc|87.00kB|2016-08-26 02:34:30
+2023-09-13 14:44:43,605 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Maggie.doc|139.50kB|2016-08-26 10:17:14
+2023-09-13 14:44:54,204 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Alan Ng.doc|140.00kB|2016-08-29 03:50:11
+2023-09-13 14:44:54,204 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Florence Chow.doc|140.00kB|2016-08-29 03:46:47
+2023-09-13 14:44:54,204 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Florence Chow.doc|139.50kB|2016-08-29 03:47:04
+2023-09-13 14:44:54,205 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Maggie.doc|139.50kB|2016-08-26 10:20:41
+2023-09-13 14:44:54,205 INFO |pdf|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/CHOUNG Chi Man, Man_1.pdf|1.58MB|2016-08-26 02:46:41
+2023-09-13 14:44:54,206 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Stephanie Choi.doc|139.50kB|2016-08-29 03:55:13
+2023-09-13 14:44:54,206 INFO |pdf|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/HUI Ka Kin_1.pdf|226.34kB|2016-08-26 03:09:33
+2023-09-13 14:44:54,206 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Jessica _Jackie.doc|140.00kB|2016-08-29 04:02:33
+2023-09-13 14:44:54,206 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Sharon.doc|139.50kB|2016-08-30 01:42:40
+2023-09-13 14:44:54,206 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_HRA_Jackie Yeung.doc|139.50kB|2016-08-29 04:01:14
+2023-09-13 14:44:54,206 INFO |doc|HR/2.   Recruitment/Resume/2016/Assistant Manager - Corporate Marketing Aug 16/1st Batch/IRF_Karen_Florence Chow.doc|140.00kB|2016-08-29 03:47:35

@@ -1,0 +1,4 @@
+2023-09-13 14:44:44,954 INFO |pdf|HR/14. Office Administration/Reception/Admin/Microwave and Steamer/Steamer_20170206/Steamer Usage_Chi. Ver._20170206.pdf|247.87kB|2017-02-06 07:17:36
+2023-09-13 14:44:44,955 INFO |pdf|HR/14. Office Administration/Reception/Admin/Microwave and Steamer/Steamer_20170206/Miele Hong Kong Warranty Order Confimation.pdf|84.00kB|2017-02-10 07:35:32
+2023-09-13 14:44:44,955 INFO |docx|HR/14. Office Administration/Reception/Admin/Microwave and Steamer/Steamer_20170206/BeWare of STEAM Notice.docx|21.44kB|2017-02-07 07:39:46
+2023-09-13 14:44:44,955 INFO |pdf|HR/14. Office Administration/Reception/Admin/Microwave and Steamer/Steamer_20170206/Steamer Usage_Eng. Ver._20170206.pdf|308.29kB|2017-02-06 07:43:54
