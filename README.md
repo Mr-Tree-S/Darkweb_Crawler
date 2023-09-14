@@ -10,7 +10,7 @@ The script accepts the following command line arguments:
 
 - `-f`: Input file containing directories.
 
-### How to use
+### How to use crawler
 
 To crawler a directory, run the following command in your terminal:
 
@@ -27,11 +27,15 @@ python crawler.py -f ./Finance.txt
 ```
 
 After the script execution is completed, you will obtain the corresponding log files.
-For example, in the log folder.
+For example, in the Finance_log folder.
 
-Then, write the corresponding file names into a file,
- execute the command, 
- and you can generate Excel files in batches
+### How to use transfer
 
+If you need to transform log.txt into xlsx files.
+write the corresponding file names into a txt, like Finance_log_name.txt,
+Then execute the command,you will get xlsx files.
 
+```shell
+python transform.py -f ./Finance_log_name.txt
 
+```
