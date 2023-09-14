@@ -1,0 +1,6 @@
+2023-09-13 14:24:49,374 INFO |jpg|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/Application.jpg|1.32MB|2015-01-20 23:41:46
+2023-09-13 14:24:49,374 INFO |pdf|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/approved application.pdf|246.11kB|2015-05-26 07:28:46
+2023-09-13 14:24:49,375 INFO |pdf|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/signed application.pdf|238.61kB|2015-05-18 03:03:06
+2023-09-13 14:24:49,375 INFO |pdf|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/License_Pokfulam Art Exhibition_revised on 9.6.15.pdf|135.57kB|2015-06-09 06:30:56
+2023-09-13 14:24:49,375 INFO |pdf|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/License_Pokfulam Art Exhibition_updated on 29.5.15.pdf|135.51kB|2015-05-29 07:30:18
+2023-09-13 14:24:49,376 INFO |db|Finance/FMO/East Point Report/Invoices/201506/Sales & Promotion/MMR - June, 2015/MMR - HKCMCL - Pokfulam Art Exhibition 2015 (Sam)/Thumbs.db|5.00kB|2015-06-25 06:22:24

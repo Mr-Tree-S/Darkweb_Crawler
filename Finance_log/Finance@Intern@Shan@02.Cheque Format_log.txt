@@ -1,0 +1,4 @@
+2023-09-13 14:24:45,376 INFO |doc|Finance/Intern/Shan/02.Cheque Format/Cheque (ICBC)3.doc|31.50kB|2012-06-07 08:56:27
+2023-09-13 14:24:45,377 INFO |doc|Finance/Intern/Shan/02.Cheque Format/Cheque(ICBC)2.doc|35.00kB|2012-06-07 07:41:56
+2023-09-13 14:24:45,377 INFO |doc|Finance/Intern/Shan/02.Cheque Format/Cheque Format (DCC).doc|32.00kB|2012-08-29 08:42:36
+2023-09-13 14:24:45,377 INFO |doc|Finance/Intern/Shan/02.Cheque Format/Cheque (ICBC)1.doc|42.00kB|2012-06-07 09:20:08
