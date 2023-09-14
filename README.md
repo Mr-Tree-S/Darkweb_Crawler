@@ -29,7 +29,7 @@ python crawler.py -f ./Finance.txt
 After the script execution is completed, you will obtain the corresponding log files.
 For example, in the Finance_log folder.
 
-### How to use transfer
+### How to use transform
 
 If you need to transform log.txt into xlsx files.
 write the corresponding file names into a txt, like Finance_log_name.txt,
