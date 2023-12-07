@@ -25,17 +25,7 @@ def recursive(directory):
     directory_url = urllib.parse.quote(directory)
     directory_url = directory_url.replace("/", "%2F").replace("%20", "+")
     for page_no in range(0, 100):
-        cmd = "proxychains4 curl 'http://aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion/ajax.php' \
-        -H 'Accept: application/json, text/javascript, */*; q=0.01' \
-        -H 'Accept-Language: en-US,en;q=0.9' \
-        -H 'Connection: keep-alive' \
-        -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
-        -H 'Cookie: PHPSESSID=8c344vcesol3e50qkn7bcu31v5; visit=enwOvkX4%7C' \
-        -H 'Origin: http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/' \
-        -H 'Referer: http://aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion/?id=enwOvkX4&dir=.' \
-        -H 'Sec-GPC: 1' \
-        -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' \
-        -H 'X-Requested-With: XMLHttpRequest' x--data-raw '' --compressed --insecure"
+        cmd = "proxychains4 curl -X PROPFIND 'http://aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion/ajax.php'"
         cmd = cmd.replace("@PAGE@", str(page_no))
         cmd = cmd.replace("@DIR@", directory_url)
         # print("@@@ cmd START @@@", cmd, "@@@ cmd: END @@@")

@@ -1,3 +1,5 @@
+http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG
+
 PROPFIND /public/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG/ HTTP/1.1
 Host: weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion
 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:102.0) Gecko/20100101 Firefox/102.0
@@ -11,3 +13,17 @@ Connection: keep-alive
 Sec-Fetch-Dest: empty
 Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
+
+        cmd = "proxychains4 curl 'http://aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion/ajax.php' \
+        -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+        -H 'Accept-Language: en-US,en;q=0.9' \
+        -H 'Connection: keep-alive' \
+        -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+        -H 'Cookie: PHPSESSID=8c344vcesol3e50qkn7bcu31v5; visit=enwOvkX4%7C' \
+        -H 'Origin: http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/' \
+        -H 'Referer: http://aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion/?id=enwOvkX4&dir=.' \
+        -H 'Sec-GPC: 1' \
+        -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' \
+        -H 'X-Requested-With: XMLHttpRequest' x--data-raw '' --compressed --insecure"
+
+http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG
