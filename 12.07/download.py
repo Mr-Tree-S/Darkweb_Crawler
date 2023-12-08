@@ -3,11 +3,11 @@ import requests
 from urllib.parse import quote
 
 # 定义文件路径
-file_path = "./list.txt"
+file_path = "/Users/jack/Desktop/Dev/crawler/12.07/list.txt"
 
 session = requests.session()
 session.trust_env = False
-session.proxies = {'http': 'socks5h://localhost:9050', 'https': 'socks5h://localhost:9050'}
+session.proxies = {'http': 'socks5h://localhost:9150', 'https': 'socks5h://localhost:91ls50'}
 headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/115.0',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',

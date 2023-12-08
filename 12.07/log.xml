@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<D:multistatus xmlns:D="DAV:">
+<D:response>
+<D:href>/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer%20Doc/D/</D:href>
+<D:propstat>
+<D:prop>
+<D:displayname>D</D:displayname>
+<D:getlastmodified>Fri, 03 Nov 2023 05:48:05 GMT</D:getlastmodified>
+<D:resourcetype><D:collection/></D:resourcetype>
+<D:lockdiscovery/>
+<D:supportedlock>
+</D:supportedlock>
+</D:prop>
+<D:status>HTTP/1.1 200 OK</D:status>
+</D:propstat>
+</D:response>
+<D:response>
+<D:href>/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer%20Doc/D/20210421%20fm%20DBJV%20-%20Remedial%20works%20due%20to%20supply%20of%20incorrect%20concrete%20grade%20to%20POC.pdf</D:href>
+<D:propstat>
+<D:prop>
+<D:displayname>20210421 fm DBJV - Remedial works due to supply of incorrect concrete grade to POC.pdf</D:displayname>
+<D:getcontentlength>1690282</D:getcontentlength>
+<D:getlastmodified>Tue, 18 Apr 2023 22:07:05 GMT</D:getlastmodified>
+<D:resourcetype></D:resourcetype>
+<D:lockdiscovery/>
+<D:supportedlock>
+</D:supportedlock>
+</D:prop>
+<D:status>HTTP/1.1 200 OK</D:status>
+</D:propstat>
+</D:response>
+<D:response>
+<D:href>/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer%20Doc/D/20230111%20fm%20Dragages%20-%20Poor%20arrangement%20and%20late%20delivery%20of%20concrete%20supply%20on%207%20Jan%202023.pdf</D:href>
+<D:propstat>
+<D:prop>
+<D:displayname>20230111 fm Dragages - Poor arrangement and late delivery of concrete supply on 7 Jan 2023.pdf</D:displayname>
+<D:getcontentlength>1003156</D:getcontentlength>
+<D:getlastmodified>Tue, 18 Apr 2023 22:07:06 GMT</D:getlastmodified>
+<D:resourcetype></D:resourcetype>
+<D:lockdiscovery/>
+<D:supportedlock>
+</D:supportedlock>
+</D:prop>
+<D:status>HTTP/1.1 200 OK</D:status>
+</D:propstat>
+</D:response>
+<D:response>
+<D:href>/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer%20Doc/D/20210929%20fm%20Dragages%20-%20Unsatisfactory%20S1%20shotcrete%20quality.pdf</D:href>
+<D:propstat>
+<D:prop>
+<D:displayname>20210929 fm Dragages - Unsatisfactory S1 shotcrete quality.pdf</D:displayname>
+<D:getcontentlength>2296601</D:getcontentlength>
+<D:getlastmodified>Tue, 18 Apr 2023 22:07:05 GMT</D:getlastmodified>
+<D:resourcetype></D:resourcetype>
+<D:lockdiscovery/>
+<D:supportedlock>
+</D:supportedlock>
+</D:prop>
+<D:status>HTTP/1.1 200 OK</D:status>
+</D:propstat>
+</D:response>
+</D:multistatus>
