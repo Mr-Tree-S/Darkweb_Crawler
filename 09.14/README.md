@@ -1,6 +1,6 @@
-# crawler
+# Darkweb Crawler
 
-> darkweb crawler
+> A Python script for crawling specific directories in the dark web and extracting file information.
 
 ## Options
 
