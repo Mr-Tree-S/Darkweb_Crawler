@@ -6,7 +6,9 @@ import os
 # 定义目标URL的基础部分
 base_url = "http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/public/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/"
 # path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer Doc/D/"
-path = "/HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/"
+# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/"
+path = "HKG/"
+
 
 folder_path = path
 output_file_name = "file_name_list.txt"
@@ -37,19 +39,15 @@ def requests_handler(path):
 
     # 使用代理发送请求
     response = session.request("PROPFIND", url, headers=headers)
-    # 关闭会话
     session.close()
 
     # 输出响应
     print("Response Status Code:", response.status_code)
-    print("Response Content:")
+    # print("Response Content:")
     # print(response.text)
     
     # 解析 XML
     root = ET.fromstring(response.text)
-
-    # 遍历所有<D:response>元素
-    # for xml_response in root.findall("{DAV:}response"):
 
     # 获取所有<D:response>元素的迭代器
     xml_responses = root.findall("{DAV:}response")
@@ -74,13 +72,8 @@ def requests_handler(path):
         # 打印提取的信息
         delimiter = "|"
         data_row = delimiter.join([href, displayname, resourcetype, contentlength, lastmodified])
-        print(data_row)
-        # print(f"href: {href}")
-        # print(f"displayname: {displayname}")
-        # print(f"resourcetype: {resourcetype}")
-        # print(f"contentlength: {contentlength}")
-        # print(f"lastmodified: {lastmodified}")
-        print("--------------------")
+        # print(data_row)
+        # print("--------------------")
 
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
