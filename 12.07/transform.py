@@ -1,23 +1,22 @@
 import pandas as pd
-import argparse
 import os
+import argparse
 
+def transfer(input_file):
+    # Read text file into DataFrame and specify column names
+    df = pd.read_csv(input_file, sep='|', header=None, names=['href', 'displayname', 'resourcetype', 'contentlength', 'lastmodified'])
 
-def transfer(directory):
-    # 创建DataFrame
-    df = pd.read_csv(directory, sep='|', header=None, names=['href', 'displayname', 'resourcetype', 'contentlength', 'lastmodified'])
-
-    # 保存DataFrame为Excel文件
+    # Convert DataFrame to Excel format
     output_file = os.path.splitext(input_file)[0] + ".xlsx"
     df.to_excel(output_file, index=False)
 
-parser = argparse.ArgumentParser(description='transform txt to xlsx')
-parser.add_argument('-f', '--input_file', type=str, help='Input file containing directories')
+# Set up argument parser
+parser = argparse.ArgumentParser(description='Transform text to Excel')
+parser.add_argument('-f', '--file', type=str, help='Input file path')
 args = parser.parse_args()
-# main
-if args.input_file:
-    with open(args.input_file, 'r') as file:
-        input_file = args.input_file
-        transfer(input_file)
+
+# Execute transformation
+if args.file:
+    transfer(args.file)
 else:
-    print('Usage: python3 a.py [-d <input_directory> | -f <input_file>]')
+    print('Usage: python3 transform.py -f <file>')

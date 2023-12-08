@@ -1,28 +1,21 @@
 import requests
 import xml.etree.ElementTree as ET
 import os
+import argparse
 
 
-# 定义目标URL的基础部分
+# Define the base URL
 base_url = "http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/public/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/"
-# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer Doc/D/"
-# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/"
-path = "HKG/"
 
-
-folder_path = path
-output_file_name = "file_name_list.txt"
-full_path = os.path.join(folder_path, output_file_name)
-
-def requests_handler(path):
-    url = base_url + path
+def requests_handler(input_dir_path, output_file_path):
+    url = base_url + input_dir_path
     
-    # 创建会话对象
+    # Create a session object
     session = requests.session()
     session.trust_env = False
     session.proxies = {'http': 'socks5h://localhost:9150', 'https': 'socks5h://localhost:9150'}
 
-    # 定义请求头
+    # Define request headers
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/115.0",
         "Accept": "text/plain,application/xml",
@@ -37,50 +30,67 @@ def requests_handler(path):
         "Sec-Fetch-Site": "same-origin"
     }
 
-    # 使用代理发送请求
+    # Send a request using the proxy
     response = session.request("PROPFIND", url, headers=headers)
     session.close()
 
-    # 输出响应
-    print("Response Status Code:", response.status_code)
+    # print the response
+    # print("Response Status Code:", response.status_code)
     # print("Response Content:")
     # print(response.text)
-    
-    # 解析 XML
+
+    # Parse the XML response
     root = ET.fromstring(response.text)
 
-    # 获取所有<D:response>元素的迭代器
-    xml_responses = root.findall("{DAV:}response")
-
-    # 现在遍历剩下的<D:response>元素
-    for xml_response in xml_responses[1:]:
-        # 提取文件或目录的路径
+    # Iterate through each <D:response> element except the parent node
+    for xml_response in root.findall("{DAV:}response")[1:]:
+        # Extract file or directory path
         href = xml_response.find("{DAV:}href").text
         prefix = "/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/"
         href = href.replace(prefix, "")
-        # 提取显示名称
+        # Extract display name
         displayname = xml_response.find(".//{DAV:}displayname").text
-        # 提取资源类型（文件或目录）
+        # Determine resource type (file or directory)
         resourcetype = xml_response.find(".//{DAV:}resourcetype")
         resourcetype = "Directory" if resourcetype.find("{DAV:}collection") is not None else "File"
-        # 提取文件大小（如果存在）
+        # Extract file size if available
         contentlength = xml_response.find(".//{DAV:}getcontentlength")
         contentlength = contentlength.text if contentlength is not None else "N/A"
-        # 提取最后修改时间
+        # Extract last modified time
         lastmodified = xml_response.find(".//{DAV:}getlastmodified").text
 
-        # 打印提取的信息
+        # Prepare data row
         delimiter = "|"
         data_row = delimiter.join([href, displayname, resourcetype, contentlength, lastmodified])
         # print(data_row)
         # print("--------------------")
 
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
-        with open(full_path, 'a') as file:
+        with open(output_file_path, 'a') as file:
             if resourcetype == "Directory":
-                requests_handler(href)
+                # Recursively handle directories
+                requests_handler(href, output_file_path)
             else:
+                # Write file data to output file
                 file.write(data_row + "\n")
 
-requests_handler(path)
+# Parse arguments
+parser = argparse.ArgumentParser(description='Darkweb crawler')
+parser.add_argument('-p', '--path', type=str, help='Input path to be crawled')
+args = parser.parse_args()
+
+# Main execution
+if args.path:
+    input_dir_path = args.path
+    # Create directory if it does not exist
+    if not os.path.exists(input_dir_path):
+        os.makedirs(input_dir_path)
+    output_file_name = "file_name_list.txt"
+    output_file_path = os.path.join(input_dir_path, output_file_name)
+    requests_handler(input_dir_path, output_file_path)
+else:
+    # Display usage information
+    print('Usage: python3 crawler.py -p <path>')
+
+# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer Doc/D/"
+# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/"
+# path = "HKG/"
