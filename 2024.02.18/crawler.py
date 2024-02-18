@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import json
-import urllib.parse
+from urllib.parse import unquote
 import os
 import argparse
 
@@ -37,29 +36,56 @@ def requests_handler(input_dir_path, output_file_path):
 
     # Send a request using the proxy
     response = session.request("GET", url, headers=headers)
+    response.encoding = 'utf-8'
     session.close()
 
     # print the response
-    print("Response Status Code:", response.status_code)
+    # print("Response Status Code:", response.status_code)
     # print("Response Content:")
     # print(response.text)
 
     # Parse the response
     soup = BeautifulSoup(response.text, "html.parser")
-    path_parent = soup.find('h1').text
-    print("#### path_parent: ", path_parent)
+    # path_parent_debug = soup.find('h1').text
+    # print("#### path_parent_debug:", path_parent_debug, "####")
+    path_parent = soup.find('h1').text.split("Index of /")[1]
+    # print("#### path_parent:", path_parent, "####")
     itemList = soup.find_all('a')
     # print("#### itemList START ####", itemList, "#### itemList: END ####")
-    # for item in itemList:
-    item = itemList[0]
-    if item is not None:
-        # Extract file or directory path
-        print("#### item: ", item)
-        href = item['href']
-        print("#### href: ", href)
+    for item in itemList:
+    # item = itemList[1]
+        if item.text == "../":
+            continue
         # Extract display name
-        displayname = item.text
-        print("#### displayname: ", displayname)
+        href = item['href']
+        # print("#### href:", href, "####")
+        name = unquote(href)
+        # print("#### name:", name, "####")
+        # Extract date time
+        date_time = item.next_sibling.strip().split("  ")[0]
+        # print("#### date_time:", date_time, "####")
+        # Extract file size
+        file_size = item.next_sibling.strip().split("  ")[-1].strip()
+        # print("#### file_size:", file_size, "####")
+        if file_size == "-":
+            file_type = "dir"
+            dir_path = path_parent + name
+            dir_path = dir_path.replace("#", "%23")
+            # print("#### dir_path:", dir_path, "####")
+            requests_handler(dir_path, output_file_path)
+        else:
+            file_type = "file"
+            file_type_detail = name.split(".")[-1]
+            file_path = path_parent + name
+            # Prepare data row
+            delimiter = "|"
+            data_row = delimiter.join([file_path, name, file_type, file_type_detail, date_time, file_size])
+            # print("--------------------")
+            print(data_row)
+            # print("--------------------")
+            
+            with open(output_file_path, 'a') as file:
+                file.write(data_row + "\n")
 
 
 # Parse arguments
