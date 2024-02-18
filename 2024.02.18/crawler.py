@@ -3,17 +3,14 @@ from bs4 import BeautifulSoup
 from urllib.parse import unquote
 import os
 import argparse
-
-
-# if you want to exclude some dirpath, please add it to this list
-done_dirs = []
+import threading
 
 # Define the base URL
 base_url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/"
 
 def requests_handler(input_dir_path, output_file_path):
     url = base_url + input_dir_path
-    
+
     # Create a session object
     session = requests.session()
     session.trust_env = False
@@ -52,19 +49,16 @@ def requests_handler(input_dir_path, output_file_path):
     # print("#### path_parent:", path_parent, "####")
     itemList = soup.find_all('a')
     # print("#### itemList START ####", itemList, "#### itemList: END ####")
+
     for item in itemList:
-    # item = itemList[1]
         if item.text == "../":
             continue
-        # Extract display name
         href = item['href']
         # print("#### href:", href, "####")
         name = unquote(href)
         # print("#### name:", name, "####")
-        # Extract date time
         date_time = item.next_sibling.strip().split("  ")[0]
         # print("#### date_time:", date_time, "####")
-        # Extract file size
         file_size = item.next_sibling.strip().split("  ")[-1].strip()
         # print("#### file_size:", file_size, "####")
         if file_size == "-":
@@ -72,7 +66,8 @@ def requests_handler(input_dir_path, output_file_path):
             dir_path = path_parent + name
             dir_path = dir_path.replace("#", "%23")
             # print("#### dir_path:", dir_path, "####")
-            requests_handler(dir_path, output_file_path)
+            # Create a thread to handle subdirectory
+            threading.Thread(target=requests_handler, args=(dir_path, output_file_path)).start()
         else:
             file_type = "file"
             file_type_detail = name.split(".")[-1]
