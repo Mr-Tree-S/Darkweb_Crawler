@@ -1,11 +1,16 @@
 import requests
-import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
+import json
+import urllib.parse
 import os
 import argparse
 
 
+# if you want to exclude some dirpath, please add it to this list
+done_dirs = []
+
 # Define the base URL
-base_url = "http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/public/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/"
+base_url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/"
 
 def requests_handler(input_dir_path, output_file_path):
     url = base_url + input_dir_path
@@ -17,61 +22,45 @@ def requests_handler(input_dir_path, output_file_path):
 
     # Define request headers
     headers = {
+        "Host": "rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/115.0",
-        "Accept": "text/plain,application/xml",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.5",
         "Accept-Encoding": "gzip, deflate, br",
-        "Referer": "http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/",
-        "Depth": "1",
-        "Origin": "http://weqv4fxkacebqrjd3lmnss6lrmoxoyihtcc6kdc6mblbv62p5q6skgid.onion",
         "Connection": "keep-alive",
-        "Sec-Fetch-Dest": "empty",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Site": "same-origin"
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1"
     }
 
     # Send a request using the proxy
-    response = session.request("PROPFIND", url, headers=headers)
+    response = session.request("GET", url, headers=headers)
     session.close()
 
     # print the response
-    # print("Response Status Code:", response.status_code)
+    print("Response Status Code:", response.status_code)
     # print("Response Content:")
     # print(response.text)
 
-    # Parse the XML response
-    root = ET.fromstring(response.text)
-
-    # Iterate through each <D:response> element except the parent node
-    for xml_response in root.findall("{DAV:}response")[1:]:
+    # Parse the response
+    soup = BeautifulSoup(response.text, "html.parser")
+    path_parent = soup.find('h1').text
+    print("#### path_parent: ", path_parent)
+    itemList = soup.find_all('a')
+    # print("#### itemList START ####", itemList, "#### itemList: END ####")
+    # for item in itemList:
+    item = itemList[0]
+    if item is not None:
         # Extract file or directory path
-        href = xml_response.find("{DAV:}href").text
-        prefix = "/GROUPHCkg3z2BDTMdh7r5Nn6X4eWpHmVLEjbvJ9wR8GCauU/"
-        href = href.replace(prefix, "")
+        print("#### item: ", item)
+        href = item['href']
+        print("#### href: ", href)
         # Extract display name
-        displayname = xml_response.find(".//{DAV:}displayname").text
-        # Determine resource type (file or directory)
-        resourcetype = xml_response.find(".//{DAV:}resourcetype")
-        resourcetype = "Directory" if resourcetype.find("{DAV:}collection") is not None else "File"
-        # Extract file size if available
-        contentlength = xml_response.find(".//{DAV:}getcontentlength")
-        contentlength = contentlength.text if contentlength is not None else "N/A"
-        # Extract last modified time
-        lastmodified = xml_response.find(".//{DAV:}getlastmodified").text
+        displayname = item.text
+        print("#### displayname: ", displayname)
 
-        # Prepare data row
-        delimiter = "|"
-        data_row = delimiter.join([href, displayname, resourcetype, contentlength, lastmodified])
-        # print(data_row)
-        # print("--------------------")
-
-        with open(output_file_path, 'a') as file:
-            if resourcetype == "Directory":
-                # Recursively handle directories
-                requests_handler(href, output_file_path)
-            else:
-                # Write file data to output file
-                file.write(data_row + "\n")
 
 # Parse arguments
 parser = argparse.ArgumentParser(description='Darkweb crawler')
@@ -90,7 +79,3 @@ if args.path:
 else:
     # Display usage information
     print('Usage: python3 crawler.py -p <path>')
-
-# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/Customer Doc/D/"
-# path = "HKG/HKDC/DEPARTMENTS/ACL_Customer_Complaint_Registry/"
-# path = "HKG/"
