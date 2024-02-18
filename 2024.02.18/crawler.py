@@ -3,10 +3,13 @@ from bs4 import BeautifulSoup
 from urllib.parse import unquote
 import os
 import argparse
-import threading
+import concurrent.futures
 
 # Define the base URL
 base_url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/"
+
+def process_subdirectory(dir_path, output_file_path):
+    requests_handler(dir_path, output_file_path)
 
 def requests_handler(input_dir_path, output_file_path):
     url = base_url + input_dir_path
@@ -50,6 +53,7 @@ def requests_handler(input_dir_path, output_file_path):
     itemList = soup.find_all('a')
     # print("#### itemList START ####", itemList, "#### itemList: END ####")
 
+    # Process each item
     for item in itemList:
         if item.text == "../":
             continue
@@ -65,9 +69,9 @@ def requests_handler(input_dir_path, output_file_path):
             file_type = "dir"
             dir_path = path_parent + name
             dir_path = dir_path.replace("#", "%23")
-            # print("#### dir_path:", dir_path, "####")
-            # Create a thread to handle subdirectory
-            threading.Thread(target=requests_handler, args=(dir_path, output_file_path)).start()
+            # Submit the subdirectory processing task to the thread pool
+            with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+                executor.submit(process_subdirectory, dir_path, output_file_path)
         else:
             file_type = "file"
             file_type_detail = name.split(".")[-1]
