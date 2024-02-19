@@ -98,7 +98,7 @@ if args.path:
     # Create directory if it does not exist
     if not os.path.exists(input_dir_path):
         os.makedirs(input_dir_path)
-    output_file_name = "file_name_list.txt"
+    output_file_name = "file_list.txt"
     output_file_path = os.path.join(input_dir_path, output_file_name)
     requests_handler(input_dir_path, output_file_path)
 else:

@@ -11,7 +11,7 @@ def transfer(input_file):
     df.to_excel(output_file, index=False)
 
 # Set up argument parser
-parser = argparse.ArgumentParser(description='Transform text to Excel')
+parser = argparse.ArgumentParser(description='Convert text to xlsx format')
 parser.add_argument('-f', '--file', type=str, help='Input file path')
 args = parser.parse_args()
 
@@ -19,4 +19,4 @@ args = parser.parse_args()
 if args.file:
     transfer(args.file)
 else:
-    print('Usage: python3 transform.py -f <file>')
+    print('Usage: python3 converter.py -f <file>')
