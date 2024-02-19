@@ -4,8 +4,6 @@ from urllib.parse import quote
 import argparse
 
 
-
-# 定义文件路径
 def requests_handler(input_list):
     session = requests.session()
     session.trust_env = False
@@ -26,12 +24,12 @@ def requests_handler(input_list):
 
     count = 0
 
-    # 逐行读取目录路径
+    # Read file list
     with open(input_list, 'r') as list:
         file_list= list.readlines()
         # print("#### file_list:", file_list, "####")
 
-    # 处理每个目录路径
+    # Process each file path
     for file_path in file_list:
         count = count + 1
         file_path = file_path.split("|")[0]
@@ -39,29 +37,28 @@ def requests_handler(input_list):
         dir_path = os.path.dirname(file_path)
         # print("#### dir_path:", dir_path, "####")
 
-        # 创建目录
+        # Create directory if not exists
         if not os.path.exists(dir_path):
             os.makedirs(dir_path, exist_ok=True)
-
         if os.path.exists(file_path):
-            print(f"文件 {file_path} 已存在，跳过下载")
+            print(f"file: {file_path} already exists, skip download.")
             continue
 
-        print("开始下载第 {}/{} 个文件，{}".format(count, len(file_list), file_path))
-        # 构建完整的URL
+        print("start downloading {}/{} files，{}".format(count, len(file_list), file_path))
+        # Send a request using the proxy
         try:
-            url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/" + quote(file_path, safe='')  # 替换为实际的URL前缀
+            url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/" + quote(file_path, safe='')
             response = session.request("GET", url, headers=headers)
             response.encoding = 'utf-8'
-            # 发起请求并保存文件
+            # save file
             with open(file_path, 'wb') as file:
                 file.write(response.content)
             expected_size = int(response.headers.get('Content-Length'))
             actual_size = os.path.getsize(file_path)
             if expected_size == actual_size:
-                print("大小一致，{}==={}文件下载完成！".format(expected_size,actual_size))
+                print("size matches, {}==={} file download succeed!".format(expected_size,actual_size))
             else:
-                print("大小不一致，{} != {}文件下载失败！".format(expected_size,actual_size))
+                print("size NOT matches, {} != {} file download falied!".format(expected_size,actual_size))
         except:
             continue
 
