@@ -47,7 +47,7 @@ def requests_handler(input_list):
             print(f"文件 {file_path} 已存在，跳过下载")
             continue
 
-        print("开始下载第 {}/{} 个文件".format(count, len(file_list)))
+        print("开始下载第 {}/{} 个文件，{}".format(count, len(file_list), file_path))
         # 构建完整的URL
         try:
             url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/" + quote(file_path, safe='')  # 替换为实际的URL前缀
