@@ -29,16 +29,15 @@ def requests_handler(input_list):
     # 逐行读取目录路径
     with open(input_list, 'r') as list:
         file_list= list.readlines()
-        # print("#### href:", href, "####")
-        print("#### file_list:", file_list, "####")
+        # print("#### file_list:", file_list, "####")
 
     # 处理每个目录路径
     for file_path in file_list:
         count = count + 1
         file_path = file_path.split("|")[0]
-        print("#### file_path:", file_path, "####")
+        # print("#### file_path:", file_path, "####")
         dir_path = os.path.dirname(file_path)
-        print("#### dir_path:", dir_path, "####")
+        # print("#### dir_path:", dir_path, "####")
 
         # 创建目录
         if not os.path.exists(dir_path):
