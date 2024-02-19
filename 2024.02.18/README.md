@@ -26,18 +26,6 @@ python3 crawler.py -p "proof/12Y Planning/"
 
 After the script execution is completed, the extracted file information will be saved. For example, the file "./proof/file_list.txt" will contain a list of files from the crawled directory.
 
-## How to Use the Converter
-
-To convert the `file_list.txt` to `file_list.xlsx`, execute the following command in your terminal:
-
-```shell
-python3 converter.py -f ./proof/file_list.txt 
-```
-
-- `-f`: Path of the text file to be converted.
-
-The script will create an xlsx file in the same directory as the input text file.
-
 ## How to Use the Downloader
 
 To download the files from the `file_list.txt`, execute the following command in your terminal:
@@ -55,6 +43,18 @@ python3 downloader.py -l proof/12Y\ Planning/file_list.txt
 - `-l`: Path of the file list to be downloaded.
 
 The script will download all the files, maintaining the same directory structure as in file_list.
+
+## How to Use the Converter
+
+To convert the `file_list.txt` to `file_list.xlsx`, execute the following command in your terminal:
+
+```shell
+python3 converter.py -f ./proof/file_list.txt 
+```
+
+- `-f`: Path of the text file to be converted.
+
+The script will create an xlsx file in the same directory as the input text file.
 
 ## Troubleshooting
 
