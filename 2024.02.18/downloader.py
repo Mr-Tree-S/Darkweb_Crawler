@@ -52,6 +52,7 @@ def requests_handler(input_list):
         try:
             url = "http://rukmycgk3na5szajc4psircu2tf3m32hd2zc6pqsbc2b4d5ovrtmxqid.onion/" + quote(file_path, safe='')  # 替换为实际的URL前缀
             response = session.request("GET", url, headers=headers)
+            response.encoding = 'utf-8'
             # 发起请求并保存文件
             with open(file_path, 'wb') as file:
                 file.write(response.content)
