@@ -56,6 +56,18 @@ python3 converter.py -f ./proof/file_list.txt
 
 The script will create an xlsx file in the same directory as the input text file.
 
+## How to Use the checker
+
+To check the file list for any missing files, execute the following command in your terminal:
+
+```shell
+python3 checker.py -p ./proof
+```
+
+- `-p`: Path of the directory that you want to check.
+
+After the script execution is completed, the extracted file information will be saved. For example, the file "./proof/file_list_check.txt" will contain a list of files from the directory that you want to check.
+
 ## Troubleshooting
 
 - If you encounter connection issues, ensure your darkweb access is correctly configured.
