@@ -56,7 +56,7 @@ python3 converter.py -f ./proof/file_list.txt
 
 The script will create an xlsx file in the same directory as the input text file.
 
-## How to Use the checker
+## How to Use the Checker
 
 To check the file list for any missing files, execute the following command in your terminal:
 
