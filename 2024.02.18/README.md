@@ -49,10 +49,10 @@ The script will download all the files, maintaining the same directory structure
 To convert the `file_list.txt` to `file_list.xlsx`, execute the following command in your terminal:
 
 ```shell
-python3 converter.py -f ./proof/file_list.txt 
+python3 converter.py -l ./proof/file_list.txt 
 ```
 
-- `-f`: Path of the text file to be converted.
+- `-l`: Path of the file list to be converted.
 
 The script will create an xlsx file in the same directory as the input text file.
 

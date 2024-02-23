@@ -2,21 +2,23 @@ import pandas as pd
 import os
 import argparse
 
-def transfer(input_file):
+def converter(input_list):
     # Read text file into DataFrame and specify column names
-    df = pd.read_csv(input_file, sep='|', header=None, names=['file_path', 'name', 'file_type', 'file_type_detail', 'date_time', 'file_size'])
-
+    df = pd.read_csv(input_list, sep='|', header=None, names=['file_path', 'name', 'file_type', 'file_type_detail', 'date_time', 'file_size'])
     # Convert DataFrame to Excel format
-    output_file = os.path.splitext(input_file)[0] + ".xlsx"
+    output_file = os.path.splitext(input_list)[0] + ".xlsx"
     df.to_excel(output_file, index=False)
 
-# Set up argument parser
+
+# Parse arguments
 parser = argparse.ArgumentParser(description='Convert text to xlsx format')
-parser.add_argument('-f', '--file', type=str, help='Input file path')
+parser.add_argument('-l', '--list', type=str, help='Input file list to be converted to xlsx format')
 args = parser.parse_args()
 
-# Execute transformation
-if args.file:
-    transfer(args.file)
+# Main execution
+if args.list:
+    input_list = args.list
+    converter(input_list)
 else:
-    print('Usage: python3 converter.py -f <file>')
+    # Display usage information
+    print('Usage: python3 converter.py -l <file_list>')
