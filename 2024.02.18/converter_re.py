@@ -22,4 +22,4 @@ if args.list:
     converter(input_list)
 else:
     # Display usage information
-    print('Usage: python3 converter.py -l <file_list>')
+    print('Usage: python3 converter_re.py -l <file_list>')
